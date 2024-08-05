@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            border-left: 100px solid #0073e6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #0073e6;
+        }
+
+        header p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        header a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0073e6;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+
+
+        p,
+        ul {
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .education-item,
+        .experience-item,
+        .project-item {
+            margin-bottom: 20px;
+        }
+
+        .skills-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #Download {
+            width: 90px;
+            height: 40px;
+            background-color: #0073e6;
+            color: #f4f4f4;
+            margin-bottom: 50px;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="resume-container">
+            <header>
+                <h1 id="name">Your Name</h1>
+                Email: <a id="email">your.email@example.com </a>| Phone:<a id="phone"> 123-456-7890</a>
+                <p>LinkedIn: <a id="linkedIn" href="#">linkedin.com/in/yourprofile</a> | GitHub: <a id="gitHub"
+                        href="#">github.com/yourprofile</a></p>
+            </header>
+            <section>
+                <h2>Summary</h2>
+                <p>In the realm of software development, innovation and problem-solving form the cornerstone of our
+                    work. From crafting
+                    elegant code to architecting robust systems, each line we write represents a commitment to
+                    excellence and a passion for
+                    technology. In an ever-evolving landscape, staying ahead means not only mastering current tools and
+                    methodologies but
+                    also embracing emerging trends and paradigms.</p>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <div class="education-item">
+                    <p><strong id="college">College Name</strong>, <strong id="Dept">Your Field</strong></p>
+                    <p id="Date">Graduation Date: Month Year</p>
+                </div>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3 id="job">Job Title</h3>
+                    <h3 id="companyName">Company Name</h3>
+                    <p id="Month">Month Year - Month Year</p>
+                    <ul>
+                        <li id="role">Describe your role</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3 id="project">Project Title</h3>
+                    <p id="projectDescription">Brief description of the project.</p>
+                    <ul>
+                        <li id="projectFeatures">Highlight key features</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul style="list-style-type:disc">
+                    <li id="Skill1">Skill 1</li>
+                    <li id="Skill2">Skill 2</li>
+                    <li id="Skill3">Skill 3</li>
+                    <li id="Skill4">Skill 4</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <center><input id="Download" type="submit" onclick="printDoc('container')" value="Download"></input></center>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          
+            
+            let formData = JSON.parse(localStorage.getItem('formData'));
+
+            if (formData) {
+                document.getElementById('name').innerHTML = formData.Name;
+                document.getElementById('email').innerHTML = formData.emailID;
+                document.getElementById('phone').innerHTML = formData.Phone;
+                document.getElementById('linkedIn').innerHTML = formData.linkedIn;
+                document.getElementById('gitHub').innerHTML = formData.gitHub;
+                document.getElementById('college').innerHTML = formData.college;
+                document.getElementById('Dept').innerHTML = formData.dept;
+                document.getElementById('Date').innerHTML = formData.date;
+                document.getElementById('job').innerHTML = formData.job;
+                document.getElementById('companyName').innerHTML = formData.companyName;
+                document.getElementById('Month').innerHTML = formData.month;
+                document.getElementById('role').innerHTML = formData.role;
+                document.getElementById('project').innerHTML = formData.project;
+                document.getElementById('projectDescription').innerHTML = formData.projectDescription;
+                document.getElementById('projectFeatures').innerHTML = formData.projectFeatures;
+                document.getElementById('Skill1').innerHTML = formData.Skill1;
+                document.getElementById('Skill2').innerHTML = formData.Skill2;
+                document.getElementById('Skill3').innerHTML = formData.Skill3;
+                document.getElementById('Skill4').innerHTML = formData.Skill4;
+            }
+        });
+        function printDoc(DivId)
+        {  
+            var division=document.getElementById(DivId).innerHTML;
+            var original=document.body.innerHTML;
+
+            document.body.innerHTML=division;
+            window.print();
+            document.body.innerHTML=original;
+        }
+    </script>
+</body>
+
+</html>

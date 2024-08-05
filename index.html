@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form onsubmit="printer(event)">
+            <h2>Personal Information</h2>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="number" id="phone" name="phone" required>
+
+            <label for="linkedin">LinkedIn:</label>
+            <input type="text" id="linkedin" name="linkedin" required>
+
+            <label for="github">GitHub:</label>
+            <input type="text" id="github" name="github" required>
+
+            <h2>Education</h2>
+            <label for="college">College Name:</label>
+            <input type="text" id="college" name="college" required>
+
+            <label for="field">Field of Study:</label>
+            <input type="text" id="field" name="field" required>
+
+            <label for="graduation">Graduation Date:</label>
+            <input type="text" id="graduation" name="graduation" required>
+
+            <h2>Experience</h2>
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" name="job-title" required>
+
+            <label for="company">Company Name:</label>
+            <input type="text" id="company" name="company" required>
+
+            <label for="job-duration">Duration:</label>
+            <input type="text" id="job-duration" name="job-duration" required>
+
+            <label for="job-description">Job Description:</label>
+            <textarea id="job-description" name="job-description"></textarea>
+
+            <h2>Projects</h2>
+            <label for="project-title">Project Title:</label>
+            <input type="text" id="project-title" name="project-title" required>
+
+            <label for="project-description">Project Description:</label>
+            <textarea id="project-description" name="project-description"></textarea>
+
+            <label for="project-features">Key Features:</label>
+            <textarea id="project-features" name="project-features"></textarea>
+
+            <h2>Skills</h2>
+            <label for="skills1">List Your Skills:</label>
+            <input type="text" id="skills1" name="skills1" required>
+            <input type="text" id="skills2" name="skills2" required>
+            <input type="text" id="skills3" name="skills3" required>
+            <input type="text" id="skills4" name="skills4" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+<script src="Connect.js"></script>
+
+</html>
